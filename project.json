@@ -1,0 +1,43 @@
+{
+  "projectType": "library",
+  "root": "libs/shifts-calendar",
+  "sourceRoot": "libs/shifts-calendar/src",
+  "prefix": "better",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/shifts-calendar"],
+      "options": {
+        "project": "libs/shifts-calendar/ng-package.json",
+        "tailwindConfig": "libs/shifts-calendar/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shifts-calendar/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shifts-calendar/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shifts-calendar"],
+      "options": {
+        "jestConfig": "libs/shifts-calendar/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shifts-calendar/**/*.ts",
+          "libs/shifts-calendar/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
